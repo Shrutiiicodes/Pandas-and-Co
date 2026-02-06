@@ -1,0 +1,31 @@
+source venv/bin/activate
+
+deactivate
+
+
+Github
+git clone https://github.com/USERNAME/REPO_NAME.git
+^ creates local folder
+
+cd datathon-project
+code .
+
+virtual environment inside REPO_NAME
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+after editing:
+git add .
+git commit -m "Added preprocessing"
+git push
+
+
+before working:
+git pull
+
+after working:
+git add .
+git commit -m "work update"
+git push
+
