@@ -62,9 +62,9 @@ def main(src="data/raw/ps3.csv"):
     # permutation test: does shuffling the label change accuracy? if not, there is no signal.
     rng = np.random.default_rng(SEED)
     perm = [cv_acc(build_pipeline("hgb", NUMERIC_COLS), X, pd.Series(rng.permutation(y), index=y.index))[0]
-            for _ in range(5)]
+            for _ in range(20)]
     out["permutation_test"] = {"shuffled_label_accuracies": perm, "mean": float(np.mean(perm))}
-    print(f"shuffled-label acc (5 runs): mean={np.mean(perm):.4f}")
+    print(f"shuffled-label acc (20 runs): mean={np.mean(perm):.4f}")
 
     for c in CAT_COLS:
         chi2, p, _, _ = chi2_contingency(pd.crosstab(df[c], y))

@@ -38,7 +38,7 @@ We tried to predict `Career_Readiness_Level` honestly, and also tested for leaka
 | Logistic regression, all features | 0.337 |
 | Gradient boosting, all features | 0.336 |
 | Gradient boosting, without `Readiness_Score` | 0.334 |
-| Gradient boosting on **shuffled** labels | 0.334 |
+| Gradient boosting on **shuffled** labels (20 runs) | 0.335 |
 
 Chi-square tests of every categorical against the label: all p > 0.36.
 Every numeric feature has |correlation| < 0.02 with every other feature.
@@ -55,6 +55,10 @@ A transparent **Readiness Index** (0–100) built only from cleaned inputs:
 40% skills average, 20% experience, 20% closed skill gap, 10% certifications,
 10% training hours. It is explainable, tunable, and does not pretend to learn
 from a random label.
+
+## Presentation
+
+`presentation.pptx` is the 8-slide pitch deck (charts embedded). `slides.md` is the speaker outline.
 
 ## Run it
 
