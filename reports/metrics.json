@@ -1,0 +1,50 @@
+{
+  "n_rows": 39946,
+  "chance_accuracy": 0.3362539428228108,
+  "models": {
+    "logreg/all_features": {
+      "cv_accuracy": 0.3364543612924592,
+      "cv_std": 0.0049009822780625946
+    },
+    "logreg/without_readiness_score": {
+      "cv_accuracy": 0.3374057163393157,
+      "cv_std": 0.0060340322269518505
+    },
+    "hgb/all_features": {
+      "cv_accuracy": 0.33580336918206216,
+      "cv_std": 0.0024770880299847973
+    },
+    "hgb/without_readiness_score": {
+      "cv_accuracy": 0.33425122559790044,
+      "cv_std": 0.004823987537369329
+    }
+  },
+  "chi_square": {
+    "Education_Level": {
+      "chi2": 8.75789323980935,
+      "p_value": 0.36312976899489463
+    },
+    "Current_or_Target_Role": {
+      "chi2": 12.693151521424307,
+      "p_value": 0.39173256322791844
+    },
+    "Employment_Status": {
+      "chi2": 3.7444767638043013,
+      "p_value": 0.4416901185191904
+    },
+    "Industry": {
+      "chi2": 8.892251732984104,
+      "p_value": 0.5423589769542356
+    }
+  },
+  "permutation_test": {
+    "shuffled_label_accuracies": [
+      0.3337757000356091,
+      0.3329245547421196,
+      0.33557789332046206,
+      0.3294200082059014,
+      0.33858223392584075
+    ],
+    "mean": 0.3340560780459866
+  }
+}
