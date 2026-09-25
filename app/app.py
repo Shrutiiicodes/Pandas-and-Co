@@ -29,7 +29,13 @@ def load_model():
 
 
 def readiness_index(df: pd.DataFrame) -> pd.Series:
-    """Transparent 0-100 composite. ponytail: fixed weights, tune with domain experts if used for real."""
+    """Transparent 0-100 composite. Missing inputs take the column median (or a neutral default
+    for a single profile). ponytail: fixed weights, tune with domain experts if used for real."""
+    defaults = {"Technical_Skill_Score": 70, "Soft_Skill_Score": 70, "Domain_Knowledge_Score": 70,
+                "Years_of_Experience": 5, "Certification_Count": 4, "Training_Hours_Last_Year": 250,
+                "Skill_Gap_Score": 50}
+    df = df[list(defaults)].apply(pd.to_numeric, errors="coerce")
+    df = df.fillna(df.median()).fillna(pd.Series(defaults))
     skills = df[["Technical_Skill_Score", "Soft_Skill_Score", "Domain_Knowledge_Score"]].mean(axis=1)
     exp = (df["Years_of_Experience"].clip(0, 20) / 20 * 100)
     certs = (df["Certification_Count"].clip(0, 8) / 8 * 100)

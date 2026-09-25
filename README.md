@@ -56,6 +56,11 @@ A transparent **Readiness Index** (0–100) built only from cleaned inputs:
 10% training hours. It is explainable, tunable, and does not pretend to learn
 from a random label.
 
+## Demo app
+
+![cleaning tab](reports/app_cleaning.png)
+![model audit tab](reports/app_model_audit.png)
+
 ## Presentation
 
 `presentation.pptx` is the 8-slide pitch deck (charts embedded). `slides.md` is the speaker outline.
